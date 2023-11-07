@@ -3,8 +3,10 @@ const cors = require("cors");
 
 const app = express();
 
-var corsOptions = {
-  origin: "http://localhost:8081"
+const corsOptions = {
+  origin: '*',
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  optionsSuccessStatus: 204
 };
 
 app.use(cors(corsOptions));
@@ -16,8 +18,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 const db = require("./app/models");
+
+const uri = "mongodb+srv://lucasbm777:lucasbm777@cluster0.ot46u.mongodb.net/?retryWrites=true&w=majority";
+
 db.mongoose
-  .connect(db.url, {
+  .connect(uri, {
     useNewUrlParser: true,
     useUnifiedTopology: true
   })
@@ -31,10 +36,11 @@ db.mongoose
 
 // simple route
 app.get("/", (req, res) => {
-  res.json({ message: "Welcome to bezkoder application." });
+  res.json({ message: "Welcome to this application, Lucas." });
 });
 
-require("./app/routes/turorial.routes")(app);
+
+require("./app/routes/task.routes")(app);
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;

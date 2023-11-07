@@ -1,11 +1,10 @@
+
 module.exports = mongoose => {
   var schema = mongoose.Schema(
     {
       title: String,
       description: String,
-      published: Boolean
-    },
-    { timestamps: true }
+    }
   );
 
   schema.method("toJSON", function() {
@@ -14,6 +13,6 @@ module.exports = mongoose => {
     return object;
   });
 
-  const Tutorial = mongoose.model("tutorial", schema);
-  return Tutorial;
+  const Task = mongoose.model("task", schema);
+  return Task;
 };
