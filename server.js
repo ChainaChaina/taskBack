@@ -1,7 +1,6 @@
 const express = require("express");
 const cors = require("cors");
 
-
 const app = express();
 
 const corsOptions = {
@@ -20,7 +19,7 @@ app.use(express.urlencoded({ extended: true }));
 
 const db = require("./app/models");
 
-const uri = process.env.mongoUri;
+const uri = "mongodb+srv://lucasbm777:lucasbm777@cluster0.ot46u.mongodb.net/?retryWrites=true&w=majority";
 
 db.mongoose
   .connect(uri, {
