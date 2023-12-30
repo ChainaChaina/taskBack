@@ -8,7 +8,7 @@
     ],
     "rewrites": [
         {
-          "source": "/api/(.*)",
+          "source": "*",
           "destination": "https://task-back-cd6t9gg3c-chainachaina.vercel.app/"
         }
       ]
