@@ -15,7 +15,7 @@
     "rewrites": [
         {
           "source": "/api/(.*)",
-          "destination": "https://task-back-cd6t9gg3c-chainachaina.vercel.app/",
+          "destination": "https://task-back-cd6t9gg3c-chainachaina.vercel.app/"
         }
       ]
 }
